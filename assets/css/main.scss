@@ -1,0 +1,218 @@
+@import "sass/variables", "sass/mixins", "sass/global", "sass/components",
+  "sass/navbar", "sass/footer";
+
+/********************* Start Slider section *********************/
+
+.home-sec {
+  .home-item {
+    position: relative;
+    height: calc(100vh - 111px);
+    display: flex;
+    align-items: center;
+
+    // @media screen and (max-width: $screen-lg) {
+    //   height: 400px;
+    // }
+
+    // @media screen and (max-width: $screen-sm) {
+    //   height: 200px;
+    // }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      z-index: -1;
+    }
+
+    .home-img {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .content {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .title {
+        font-size: 24px;
+        color: $white;
+      }
+
+      .desc {
+        font-size: 16px;
+        color: $white;
+      }
+
+      .main-btn {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+/********************* End Slider section *********************/
+
+/********************* Start brand section *********************/
+
+.clients-slider {
+  .owl-stage-outer {
+    padding: 20px 0;
+
+    .owl-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.client-item {
+  background-color: $white;
+  box-shadow: $main-shadow;
+  padding: 15px 20px;
+  @include center;
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    @include circle(40px);
+    background-color: rgba($color: $sec, $alpha: 0.1);
+    z-index: -1;
+  }
+
+  &::after {
+    top: -8px;
+    @include dir-right(-8px);
+  }
+
+  &::before {
+    bottom: -8px;
+    @include dir-left(-8px);
+  }
+}
+
+.brand-img {
+  max-width: 80px;
+  max-height: 75px;
+}
+
+/********************* End brand section *********************/
+
+/********************* Start About section *********************/
+.about-sec {
+  background-color: rgba($color: $sec, $alpha: 0.04);
+}
+.about-container {
+  @include between;
+  gap: 60px;
+
+  .about-img {
+    width: 300px;
+    height: 300px;
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+    position: relative;
+    @include center;
+    flex-shrink: 0;
+
+    .img {
+      max-width: 100px;
+    }
+
+    .bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+  }
+
+  .about-content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+
+    .title {
+      font-size: 22px;
+      color: $black;
+      font-family: fontBold;
+    }
+  }
+}
+/********************* End About section *********************/
+
+/********************* Start Message section *********************/
+.message-sec {
+  .mask-img {
+    flex-shrink: 0;
+    margin-bottom: 40px;
+    @include dir-margin-left(25px);
+
+    .img-con {
+      width: 300px;
+      height: 327px;
+      position: relative;
+      border: 2px solid $main;
+      border-radius: 15px 0;
+
+      .message-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        top: 15px;
+        @include dir-right(15px);
+        z-index: 2;
+        border-radius: 15px 0;
+        transition: all 0.2s linear 0s;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid $main;
+        @include dir-left(-30px);
+        bottom: -30px;
+        border-radius: 15px 0;
+      }
+    }
+
+    &.left {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+/********************* End Message section *********************/
