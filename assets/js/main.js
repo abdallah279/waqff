@@ -24,8 +24,9 @@ $(".page-navbar .links .link").each(function () {
 });
 
 // Show And Hide Search Navbar
-$('.nav-search-ic').on('click', function(){
-$('.nav-search').toggleClass('open');
+$('.search-ic').on('click', function(){
+$('.main-search').toggleClass('active');
+$('.overlay-m').fadeIn(600);
 });
 
 
@@ -48,6 +49,7 @@ $('.overlay-m').fadeOut(500);
 $('.overlay-m').on('click', function(){
 $('.links').removeClass('active');
 $('.sidebar').removeClass('active');
+$('.main-search').removeClass('active');
 $(this).fadeOut(500);
 });
 
