@@ -119,6 +119,10 @@ input:focus::placeholder {
   opacity: 0;
 }
 
+section {
+  overflow-x: hidden;
+}
+
 select {
   appearance: none;
   font-size: 13px;
@@ -298,7 +302,6 @@ input:focus {
 .scrollToTop {
   position: fixed;
   bottom: -30%;
-  z-index: 788;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -310,7 +313,7 @@ input:focus {
   animation: lab_top_up 5s linear infinite;
   transition: all 0.7s ease;
   border: 2px solid #24ABA5;
-  z-index: 1;
+  z-index: 788;
 }
 html[lang=en] .scrollToTop {
   right: 50px;
@@ -321,6 +324,14 @@ html[lang=ar] .scrollToTop {
 .scrollToTop.active {
   bottom: 20px;
   opacity: 1;
+}
+@media screen and (max-width: 576px) {
+  html[lang=en] .scrollToTop {
+    right: 25px;
+  }
+  html[lang=ar] .scrollToTop {
+    left: 25px;
+  }
 }
 
 .scrollToTop i {
@@ -982,6 +993,12 @@ html[lang=ar] .steps .step-item + .step-item:after {
   height: 200px;
   padding: 30px 0;
 }
+@media screen and (max-width: 425px) {
+  .page-title {
+    height: 140px;
+    padding: 20px 0;
+  }
+}
 .page-title::after {
   content: "";
   position: absolute;
@@ -1023,6 +1040,11 @@ html[lang=ar] .steps .step-item + .step-item:after {
   flex-wrap: wrap;
   font-size: 18px;
   color: #fff;
+}
+@media screen and (max-width: 425px) {
+  .breadcrumb-con .breadcrumb-m {
+    font-size: 16px;
+  }
 }
 .breadcrumb-con .breadcrumb-m.active {
   color: #fff;
@@ -4341,5 +4363,88 @@ html[lang=ar] .video-card .video-info .video-icon {
 }
 
 /********************* End video section *********************/
+/********************* Start Book section *********************/
+.ipgs-flipbook {
+  direction: ltr;
+  height: 500px !important;
+  width: 680px !important;
+  margin: auto !important;
+}
+@media screen and (max-width: 992px) {
+  .ipgs-flipbook {
+    width: 100% !important;
+  }
+}
+
+/********************* End Book section *********************/
+/********************* Start Blog section *********************/
+.blog-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px 0 rgba(39, 36, 36, 0.2);
+}
+.blog-card .blog-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.blog-card .content {
+  padding: 17px 10px;
+}
+.blog-card .content .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.blog-card .content .head .name {
+  font-size: 17px;
+  color: #272424;
+  text-overflow: ellipsis;
+}
+.blog-card .content .head .date {
+  font-size: 14px;
+  color: #9EA0A4;
+  font-family: fontReg;
+}
+.blog-card .content .info {
+  font-size: 15px;
+  color: #272424;
+  margin-bottom: 14px;
+  height: 75px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  line-height: 1.7;
+}
+@media screen and (max-width: 768px) {
+  .blog-card .content .info {
+    height: auto;
+    -webkit-line-clamp: initial;
+  }
+}
+.blog-card .content .main-btn {
+  width: calc(100% - 80px);
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .blog-card .content .main-btn {
+    width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 425px) {
+  .blog-card .content .main-btn {
+    width: calc(100% - 20px);
+  }
+}
+
+/********************* End Blog section *********************/
 
 /*# sourceMappingURL=main.css.map */

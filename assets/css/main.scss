@@ -610,3 +610,90 @@
 }
 
 /********************* End video section *********************/
+
+/********************* Start Book section *********************/
+.ipgs-flipbook{
+  direction: ltr;
+  height: 500px !important;
+    width: 680px !important;
+    margin: auto !important;
+    @media screen and (max-width:$screen-lg) {
+      width: 100% !important;
+    }
+}
+/********************* End Book section *********************/
+
+/********************* Start Blog section *********************/
+// blog-cards
+.blog-card{
+  border-radius: 8px;
+  overflow: hidden;
+  transition: $main-transition;
+  background-color: $white;
+
+  &:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px 0 rgba($color: $black, $alpha: .2);
+  }
+
+  .blog-img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+  }
+
+  .content{
+      padding: 17px 10px;
+      .head{
+          @include between;
+          gap: 5px;
+          margin-bottom: 14px;
+          // flex-wrap: wrap;
+
+          .name{
+              font-size: 17px;
+              color: $black;
+              text-overflow: ellipsis;
+          }
+
+          .date{
+              font-size: 14px;
+              color: $text-color;
+              font-family: fontReg;
+          }
+      }
+
+      .info{
+          font-size: 15px;
+          color: $black;
+          margin-bottom: 14px;
+          height: 75px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+          line-height: 1.7;
+          
+          @media screen and (max-width:$screen-md) {
+              height: auto;
+              -webkit-line-clamp: initial;
+          }
+      }
+
+      .main-btn{
+          width: calc(100% - 80px);
+          margin: auto;
+          // background-color: $sec !important;
+          // border-color: $sec !important;
+          
+          @media screen and (max-width:$screen-md) {
+            width: calc(100% - 40px);
+        }
+          
+          @media screen and (max-width:$screen-xs) {
+            width: calc(100% - 20px);
+        }
+      }
+  }
+}
+/********************* End Blog section *********************/

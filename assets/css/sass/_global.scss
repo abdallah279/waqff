@@ -96,6 +96,10 @@ input {
   }
 }
 
+section{
+  overflow-x: hidden;
+}
+
 select {
   appearance: none;
   font-size: 13px;
