@@ -121,6 +121,7 @@ input:focus::placeholder {
 
 section {
   overflow-x: hidden;
+  overflow-y: clip;
 }
 
 select {
@@ -554,13 +555,6 @@ html[lang=ar] .main-search .main-icon {
     gap: 24px 20px;
   }
 }
-@media screen and (max-width: 510px) {
-  .grid-4 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 18px 15px;
-  }
-}
 
 .grid-3 {
   display: grid;
@@ -602,6 +596,35 @@ html[lang=ar] .main-search .main-icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.sec_bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 200px;
+  max-height: 190px;
+  z-index: -1;
+}
+
+.sec_bg2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-180deg);
+  max-width: 200px;
+  max-height: 190px;
+  z-index: -1;
+}
+
+.sec_bg3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
 }
 
 .mt-14 {
@@ -1714,7 +1737,7 @@ html[lang=ar] .copy-item {
 }
 
 .fs-18 {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 
 .fs-19 {
@@ -3912,6 +3935,7 @@ html[lang=ar] .client-item::before {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
   }
 }
 .about-container .about-img {
@@ -3977,6 +4001,9 @@ html[lang=ar] .client-item::before {
 
 /********************* End About section *********************/
 /********************* Start Message section *********************/
+.message-sec {
+  position: relative;
+}
 .message-sec .mask-img {
   flex-shrink: 0;
   margin-bottom: 40px;
@@ -4049,6 +4076,7 @@ html[lang=ar] .message-sec .mask-img .img-con::after {
 /********************* Start Pdf section *********************/
 .pdf-sec {
   background-color: rgba(128, 198, 125, 0.04);
+  position: relative;
 }
 
 .regulations-content .regul-item {
@@ -4116,6 +4144,15 @@ html[lang=ar] .regulations-content .regul-item::after {
 }
 .regulations-content .regul-item:hover::after {
   width: 100%;
+}
+.regulations-content.sec .regul-item::after {
+  background-color: #24ABA5;
+}
+.regulations-content.sec .regul-item .reg-info .reg-icon {
+  background-color: #24ABA5;
+}
+.regulations-content.sec .regul-item:hover .reg-info {
+  color: #24ABA5;
 }
 
 /********************* End Pdf section *********************/
@@ -4446,5 +4483,50 @@ html[lang=ar] .video-card .video-info .video-icon {
 }
 
 /********************* End Blog section *********************/
+/********************* Start person-card section *********************/
+.person-card {
+  background-color: rgba(128, 198, 125, 0.1);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 5px 0 rgba(39, 36, 36, 0.1);
+}
+.person-card .person-img {
+  overflow: hidden;
+  width: 210px;
+  height: 210px;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+.person-card .person-img .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.person-card .person-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.person-card .person-content .person-name {
+  font-size: 18px;
+  text-align: center;
+}
+.person-card:hover .person-img .img {
+  transform: scale(1.2) rotate(-4deg);
+}
+
+.structure-img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+/********************* End person-card section *********************/
 
 /*# sourceMappingURL=main.css.map */
