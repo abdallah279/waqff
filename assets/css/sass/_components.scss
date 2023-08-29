@@ -1828,18 +1828,15 @@
 }
 
 .main-label {
-  margin-bottom: 12px;
-  font-size: 15px;
-  // font-family: fontDemi;
   color: $black;
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-bottom: 12px;
 
   .hint {
-    color: $dark;
-    font-family: fontReg;
-    font-size: 14px;
+    color: $red;
+    font-size: 16px;
   }
 
   @media screen and (max-width: $screen-sm) {
@@ -1921,7 +1918,7 @@
     transform: translateY(-50%);
     @include dir-right(14px);
     color: #3baeaa;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     pointer-events: none;
     background-color: transparent;
@@ -2043,11 +2040,12 @@
     }
   }
 
-  &.lg {
+  &.sm {
     ~ .select2 {
       .select2-selection--single,
       .select2-selection--multiple {
-        min-width: 95px;
+        min-height: 48px !important;
+        border-radius: 12px;
       }
     }
   }
@@ -2484,8 +2482,8 @@
 .hidden-img {
   position: relative;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin-top: 8px;
 
   img {
@@ -2516,16 +2514,13 @@
 
 .remove-img {
   position: absolute;
-  top: 15px;
-  @include dir-right(15px);
-  // @include circle(15px);
-  // width: 12px;
-  // height: 12px;
-  color: $red;
-  color: #fff;
-  background-color: transparent;
-  font-size: 17px;
+  top: -5px;
+  @include dir-right(-5px);
+  @include circle(15px);
   @include center;
+  background-color: $red;
+  color: #fff;
+  font-size: 12px;
   cursor: pointer;
 
   img {

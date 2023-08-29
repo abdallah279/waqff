@@ -1,5 +1,5 @@
 .page-header {
-  padding: 5px 0;
+  // padding: 7px 0;
   background-color: $main;
 
   .header-content {
@@ -16,6 +16,23 @@
           max-height: 20px;
         }
       }
+    }
+
+    .service-request{
+      color: $white;
+      position: relative;
+      height: 38px;
+      background-color: $sec;
+      border: 1px solid $sec;
+      transition: $main-transition;
+      @include center;
+      padding: 5px 14px;
+      font-size: 15px;
+
+      // &:hover{
+      //   background-color: $main;
+      // }
+
     }
   }
 }

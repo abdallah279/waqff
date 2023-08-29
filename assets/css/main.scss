@@ -347,14 +347,14 @@
     }
   }
 
-  &.sec{
-    .regul-item{
+  &.sec {
+    .regul-item {
       &::after {
         background-color: $main;
       }
 
       .reg-info {
-        .reg-icon{
+        .reg-icon {
           background-color: $main;
         }
       }
@@ -585,7 +585,7 @@
     }
 
     .play-v {
-      background-color: rgba($color: $sec, $alpha: .8);
+      background-color: rgba($color: $sec, $alpha: 0.8);
       font-size: 18px;
       @include circle(50px);
       color: #fff;
@@ -635,140 +635,370 @@
 /********************* End video section *********************/
 
 /********************* Start Book section *********************/
-.ipgs-flipbook{
+.ipgs-flipbook {
   direction: ltr;
   height: 500px !important;
-    width: 680px !important;
-    margin: auto !important;
-    @media screen and (max-width:$screen-lg) {
-      width: 100% !important;
-    }
+  width: 680px !important;
+  margin: auto !important;
+  @media screen and (max-width: $screen-lg) {
+    width: 100% !important;
+  }
 }
 /********************* End Book section *********************/
 
 /********************* Start Blog section *********************/
 // blog-cards
-.blog-card{
+.blog-card {
   border-radius: 8px;
   overflow: hidden;
   transition: $main-transition;
   background-color: $white;
 
-  &:hover{
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px 0 rgba($color: $black, $alpha: .2);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px 0 rgba($color: $black, $alpha: 0.2);
   }
 
-  .blog-img{
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+  .blog-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
   }
 
-  .content{
-      padding: 17px 10px;
-      .head{
-          @include between;
-          gap: 5px;
-          margin-bottom: 14px;
-          // flex-wrap: wrap;
+  .content {
+    padding: 17px 10px;
+    .head {
+      @include between;
+      gap: 5px;
+      margin-bottom: 14px;
+      // flex-wrap: wrap;
 
-          .name{
-              font-size: 17px;
-              color: $black;
-              text-overflow: ellipsis;
-          }
-
-          .date{
-              font-size: 14px;
-              color: $text-color;
-              font-family: fontReg;
-          }
+      .name {
+        font-size: 17px;
+        color: $black;
+        text-overflow: ellipsis;
       }
 
-      .info{
-          font-size: 15px;
-          color: $black;
-          margin-bottom: 14px;
-          height: 75px;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          -webkit-line-clamp: 3;
-          line-height: 1.7;
-          
-          @media screen and (max-width:$screen-md) {
-              height: auto;
-              -webkit-line-clamp: initial;
-          }
+      .date {
+        font-size: 14px;
+        color: $text-color;
+        font-family: fontReg;
+      }
+    }
+
+    .info {
+      font-size: 15px;
+      color: $black;
+      margin-bottom: 14px;
+      height: 75px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      line-height: 1.7;
+
+      @media screen and (max-width: $screen-md) {
+        height: auto;
+        -webkit-line-clamp: initial;
+      }
+    }
+
+    .main-btn {
+      width: calc(100% - 80px);
+      margin: auto;
+      // background-color: $sec !important;
+      // border-color: $sec !important;
+
+      @media screen and (max-width: $screen-md) {
+        width: calc(100% - 40px);
       }
 
-      .main-btn{
-          width: calc(100% - 80px);
-          margin: auto;
-          // background-color: $sec !important;
-          // border-color: $sec !important;
-          
-          @media screen and (max-width:$screen-md) {
-            width: calc(100% - 40px);
-        }
-          
-          @media screen and (max-width:$screen-xs) {
-            width: calc(100% - 20px);
-        }
+      @media screen and (max-width: $screen-xs) {
+        width: calc(100% - 20px);
       }
+    }
   }
 }
 /********************* End Blog section *********************/
 
 /********************* Start person-card section *********************/
-.person-card{
+.person-card {
   // background-color: #fafafa;
-  background-color: rgba($color: $sec, $alpha: .1);
+  background-color: rgba($color: $sec, $alpha: 0.1);
   padding: 25px;
   @include center;
   flex-direction: column;
   gap: 20px;
   box-shadow: $main-shadow;
 
-  .person-img{
+  .person-img {
     overflow: hidden;
     width: 210px;
     height: 210px;
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
 
-    .img{
+    .img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: $main-transition
+      transition: $main-transition;
     }
   }
-  
-  .person-content{
+
+  .person-content {
     @include center;
     flex-direction: column;
     gap: 12px;
 
-    .person-name{
+    .person-name {
       font-size: 18px;
       text-align: center;
     }
   }
 
-
-  &:hover{
-    .person-img{
-      .img{
+  &:hover {
+    .person-img {
+      .img {
         transform: scale(1.2) rotate(-4deg);
       }
     }
   }
 }
 
-.structure-img{
+.structure-img {
   display: block;
   max-width: 100%;
   margin: auto;
 }
+
 /********************* End person-card section *********************/
+
+/********************* Start new-detailes section *********************/
+.new-detailes {
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @media screen and (max-width: $screen-md) {
+      flex-wrap: wrap;
+    }
+
+    .new-detailes-img{
+      flex-basis: 50%;
+
+      @media screen and (max-width: $screen-md) {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    .img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+
+      @media screen and (max-width: $screen-md) {
+        flex-basis: 100%;
+        width: 100%;
+        height: 240px;
+      }
+    }
+
+    .left {
+      .name {
+        font-size: 22px;
+        color: $black;
+        margin-bottom: 15px;
+        font-family: fontDemi;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 19px;
+        }
+      }
+
+      .date {
+        font-size: 17px;
+        color: $text-color;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .info {
+    font-size: 17px;
+    line-height: 1.6;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 15px;
+    }
+  }
+}
+/********************* End new-detailes section *********************/
+
+
+/********************* Start contact-box section *********************/
+.contact-box{
+  background-color: $white;
+  border-radius: 12px;
+  // box-shadow: $main-shadow;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: $main-transition;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  @media screen and (max-width:$screen-md) {
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  .ic{
+    @include circle(60px);
+    @include center;
+    background-color: $main;
+    font-size: 24px;
+    color: $white;
+    transition: $main-transition;
+
+    @media screen and (max-width:$screen-md) {
+      @include circle(50px);
+      font-size: 20px;
+    }
+  }
+
+  .name{
+    font-size: 18px;
+    color: $black;
+
+    @media screen and (max-width:$screen-md) {
+      font-size: 16px;
+    }
+  }
+  
+  .desc{
+    font-size: 14px;
+    color: $black;
+
+    @media screen and (max-width:$screen-md) {
+      font-size: 13px;
+    }
+  }
+
+
+  &:hover{
+    transform: translateY(-10px);
+
+    .ic{
+      background-color: $sec;
+    }
+  }
+
+}
+
+.contact-form{
+  background-color: $white;
+  border-radius: 12px;
+  // box-shadow: $main-shadow;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 35px 25px;
+  transition: $main-transition;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: 65;
+
+  @media screen and (max-width:$screen-md) {
+    padding: 20px 15px;
+  }
+
+  .input-g{
+    margin-bottom: 24px;
+  }
+
+  .input-me{
+    background-color: $white !important;
+    // border: 1px solid #ddd !important;
+  }
+}
+
+.contact-img{
+  max-width: 100%;
+  max-height: 360px;
+
+  @media screen and (max-width:$screen-lg) {
+    display: none;
+  }
+}
+
+/********************* End contact-box section *********************/
+
+/********************* Start service-request-page section *********************/
+.service-request-page{
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: -1;
+  }
+
+  .request_bg {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+}
+
+.request-form{
+  padding: 25px 50px;
+  background-color: $white;
+  border-radius: 12px;
+  
+  @media screen and (max-width:$screen-md) {
+    padding: 25px;
+  }
+}
+
+.form-logo{
+  max-width: 80px;
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.form-title{
+  font-size: 18px;
+  color: $black;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 18px;
+}
+/********************* End service-request-page section *********************/
