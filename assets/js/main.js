@@ -1,6 +1,6 @@
 // loader js
 $(window).on("load", function () {
-  $(".loader-container").delay(300).fadeOut(1000);
+  $(".loader").delay(300).fadeOut(1000);
 });
 
 // Header Fixed
